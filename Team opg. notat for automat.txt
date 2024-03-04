@@ -1,0 +1,12 @@
+1: 1erne kan legges over til mynter puttet på av kunde men finnes ingen funksjon som gjør dette for 5kr, 10kr og 20kr.
+
+2: viser ikke riktig anntal mynter på venstre side??
+
+3: Kronene minkes ikke ifra venstre side når man trykker på knappene som overfører kr. til høyre. ?? hvis ikke dette bare er kunden som legger til kr. og ikke kroner som blir tatt ut av maskinen.
+
+4: kan kun ta ut 1 cola av gangen
+
+5: kan kjøpe cola uten at noen kroner er putte på automaten. blir også bare bilde av 1 cola.
+
+
+6: ta cola fjerner ikke colaen som har blitt kjøpt. (den som ligger utenfor boksen). Kan settes ved siden av figuren.
