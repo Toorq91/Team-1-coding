@@ -3,7 +3,7 @@ const model = {
     app: {
         displayLogo: null, //tror ikke vi trenger denne, tror dette kan settes i funksjonen til currentPage
         currentPage: null,
-        darkMode: 0,
+        darkMode: false,
         language: 'Norsk',
     },
 
