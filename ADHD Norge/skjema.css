@@ -1,26 +1,14 @@
-/* Style for the table */
-#tabell {
-    display: table;
-    border-collapse: collapse; /* Collapse borders into a single border */
+.center {
+    text-align: center;
 }
-
-/* Style for table rows */
-.row {
-    display: table-row;
+.adjust {
+    /*text-align: center;*/
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding-right: 350px;
 }
-
-/* Style for questions and answers cells */
-.cell {
-    display: table-cell;
-    border: 2px solid black; /* Add border around cells */
-    padding: 10px; /* Add padding */
-}
-
-/* Style for answers */
-.answer {
-    width: 20px; /* Set width of answer cell */
-    height: 20px; /* Set height of answer cell */
-    font-size: 14px; /* Fixed font size of X */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    text-align: center; /* Center-align content */
+.headersLeft {
+    text-align: center;
+    padding-right: 1300px;
 }

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app{
+            display: grid;
+            grid-template-columns: 100px 10px 10px 10px 10px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        const questions = [
+            { text: 'A', answer: null, gray: 1 },
+            { text: 'B', answer: null, gray: 2 },
+            { text: 'C', answer: null, gray: 3 },
+        ];
+
+        updateView();
+        function updateView() {
+            let html = '';
+            for (let i = 0; i < questions.length; i++) {
+                html += createQuestionAndAnswersRowHtml(questions, i);
+            };
+            document.getElementById('app').innerHTML = html;
+        };
+
+        function createQuestionAndAnswersRowHtml(questions, i) {
+            const question = questions[i];
+            return /*HTML*/`
+                <div>${i+1}: ${question.text}</div>
+                ${createOptionsHtml(question, i)}
+            `;
+        }
+
+        function createOptionsHtml(question, questionIndex) {
+            let innerHtml = '';
+            const selectedColIndex = question.answer;
+            for (let answerIndex = 0; answerIndex < 5; answerIndex++) {
+                let showX = answerIndex == selectedColIndex ? 'x' : '0';
+                innerHtml += /*HTML*/ `
+                <span 
+                    onclick="selectAnswer(${questionIndex}, ${answerIndex});" 
+                    class="answers"
+                    >
+                    ${showX}                        
+                </span>
+            `;
+            };
+            return innerHtml;
+        }
+
+        function selectAnswer(questionIndex, answerIndex){
+            questions[questionIndex].answer = answerIndex;
+            updateView();
+        }
+
+    </script>
+</body>
+
+</html>
