@@ -5,6 +5,8 @@ const model = {
     input: {
         zoom: null
     },
+    html: null,
+    
     question: [
         {
             question1: 'Hvor ofte har du problemer med å avslutte en oppgave etter at de interessante delene er unnagjort?',
