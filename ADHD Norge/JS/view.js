@@ -19,8 +19,9 @@ function mainPage() {
                 <h2>Funksjonssvekkelse:</h2>
                 <div>${texts.list2}</div><br/><hr/><br/>
                 <h2>Historie:</h2>
-                <div>${texts.desc2}</div><br/><br/><hr/>
-                <br/><br/><hr/><br/>
+                <div>${texts.desc2}</div><br/><br/><hr/><br/>
+                <div>${model.infoText}</div>
+                <div>${createOptionsHtml()}</div><br/><br/><hr/><br/>
                 <h2>Nytten av ADHD- screening hos voksne</h2>
                 <div>${texts.desc3}</div>
                 <div class="textCenter">${credit()}</div><br/><br/>
@@ -32,6 +33,18 @@ function mainPage() {
     </div>
     `;
 };
+
+function createOptionsHtml() {
+    let innerHtml = '';
+    model.questions.forEach((question, index) => {
+        innerHtml += `
+            <div class="question">
+                <p>${question['question' + (index + 1)]}</p>
+            </div>
+        `;
+    });
+    return innerHtml;
+}
 
 function credit() {
     let creditHtml = '';

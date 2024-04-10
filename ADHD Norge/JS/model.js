@@ -6,8 +6,8 @@ const model = {
         zoom: null
     },
     html: null,
-    
-    question: [
+    infoText: "Svar på spørsmålene nedenfor. Vurder deg selv i forhold til kriteriene ved hjelp av skalaen til høyre på arket.<br/> For hvert spørsmål krysser du av i den ruten som best beskriver hvordan du har følt og oppført deg de siste seks månedene.<br/> Etter at du har fylt ut denne sjekklisten, gir du den til din behandler, slik at dere kan diskutere den i løpet av dagens time.",
+    questions: [
         {
             question1: 'Hvor ofte har du problemer med å avslutte en oppgave etter at de interessante delene er unnagjort?',
             answer: null,
@@ -25,7 +25,7 @@ const model = {
             gray: 3,
         },
         {
-            queston4: 'Når du har en oppgave som krever at du tenker nøye igjennom det du skal gjøre, hvor ofte unngår eller utsetter du å begynne på den?',
+            question4: 'Når du har en oppgave som krever at du tenker nøye igjennom det du skal gjøre, hvor ofte unngår eller utsetter du å begynne på den?',
             answer: null,
             gray: 4,
         },
