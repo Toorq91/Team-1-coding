@@ -10,23 +10,24 @@ function mainPage() {
     model.html = /*HTML*/`
     <div class="sides">
         <div style="background-color: lightgray"></div>
-        <div class="center">
-            <h1>${texts.header1}</h1>
-            <div>${texts.desc1}</div><hr/>
-            <h2 id="instruct">Instruksjoner</h2>
-            <h2>Symptomer:</h2>
-            <div>${texts.list1}</div>
-            <h2>Funksjonssvekkelse:</h2>
-            <div>${texts.list2}</div>
-            <h2>Historie:</h2>
-            <div>${texts.desc2}</div><br/><br/><hr/><br/><br/>
-            <h2><hr/>Nytten av ADHD- screening hos voksne</h2>
-            <div>${texts.desc3}</div>
-            <div class="textCenter">${credit()}</div><br/><br/>
-            <div>${texts.desc4}</div><br/>
-            <div class="references">Referanser:
-                <div>${texts.references}</div>
-            </div>
+            <div class="center">
+                <h1>${texts.header1}</h1>
+                <div>${texts.desc1}</div><hr/><br/>
+                <h2 class="instruct">Instruksjoner</h2>
+                <h2>Symptomer:</h2>
+                <div>${texts.list1}</div>
+                <h2>Funksjonssvekkelse:</h2>
+                <div>${texts.list2}</div><br/><hr/><br/>
+                <h2>Historie:</h2>
+                <div>${texts.desc2}</div><br/><br/><hr/>
+                <br/><br/><hr/><br/>
+                <h2>Nytten av ADHD- screening hos voksne</h2>
+                <div>${texts.desc3}</div>
+                <div class="textCenter">${credit()}</div><br/><br/>
+                <div>${texts.desc4}</div><br/>
+                <div class="references">Referanser:
+                    <div>${texts.references}</div>
+                </div>
         </div>
     </div>
     `;

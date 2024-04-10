@@ -1,5 +1,5 @@
 body {
-    background-color: lightcyan;
+    background-color: lightslategray;
     font-family: Georgia, 'Times New Roman', Times, serif;
     line-height: 1.5;
 }
@@ -50,7 +50,7 @@ h2 {
     font-style: italic;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-#instruct {
+.instruct {
     font-size: 27px;
 }
 .textCenter {
