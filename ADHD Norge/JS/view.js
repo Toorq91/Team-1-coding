@@ -20,16 +20,8 @@ function mainPage() {
                 <div>${texts.list2}</div><br/><hr/><br/>
                 <h2>Historie:</h2>
                 <div>${texts.desc2}</div><br/><br/><hr/><br/>
-                <form>
-                <label for="fname">Fornavn:</label>
-                <input type="text" id="fname" name="fname">
-                <label for="lname">Etternavn:</label>
-                <input type="text" id="lname" name="lname">
-                <label for="date">Dato:</label>
-                <input type="text" id="date" name="date" readonly>
-                </form><br/>
-                <div>${model.infoText}</div><br/>
-                <div>${createOptionsHtml()}</div><br/><br/><br/>
+                ${createForm()}
+                <br/><br/><br/>
                 <form id="myForm">
                 <input type="submit" value="Generate PDF" onclick="generatePDF()">
                 </form><hr/>
@@ -45,27 +37,104 @@ function mainPage() {
     `;
 };
 
-function createOptionsHtml() {
-    let innerHtml = '<table style="border: 2px solid black;">';
-    for (let i = 0; i < model.questions.length; i++) {
-        const option = model.questions[i];
-        let showX = option.answer ? 'x' : ' ';
-        innerHtml += /*HTML*/`
-               <tr>
-                    <td>${option.question}</td>
-                    <td>
-                        <span onclick="selectedAnswer(${i});" class="answers">${showX}</span>
-                        <span onclick="selectedAnswer(${i});" class="answers">${showX}</span>
-                        <span onclick="selectedAnswer(${i});" class="answers">${showX}</span>
-                        <span onclick="selectedAnswer(${i});" class="answers">${showX}</span>
-                        <span onclick="selectedAnswer(${i});" class="answers">${showX}</span>
-                    </td>
-               </tr>
-        `;
-    };
-    innerHtml += '</table>';
-    return innerHtml;
+function createForm() {
+    let html = ''
+    html = /*HTML*/ `
+    <div class="inputField">   
+            <label for="fname">Fornavn:</label>
+            <input type="text" id="fname" name="fname">
+            <label for="lname">Etternavn:</label>
+            <input type="text" id="lname" name="lname">
+            <label for="date">Dato:</label>
+            <input type="text" id="date" name="date" readonly>
+        </div>
+        <div style="display: grid; align-items: center; justify-content: center">
+            <br/>
+            <div style="display: flex">
+                <span class="questions">${model.infoText}</span>
+                <div class="answers">
+                    <b class="grade">&ensp;Aldri</b>
+                    <b class="grade">&ensp;Sjelden</b>
+                    <b class="grade">&ensp;I blant</b>
+                    <b class="grade">&ensp;Ofte</b>
+                    <b class="grade">&ensp;Svært ofte</b>
+                </div>
+            </div>
+            ${createQuestions()}
+        </div>
+    `
+    return html;
 }
+
+// Aldri  Sjelden  I blant  Ofte  Svært ofte
+
+function createQuestions() {
+    let innerHTML = '';
+    const question = model.questions;
+    for (let q = 0; q < question.length; q++) {
+        innerHTML += /*HTML*/`
+        <div style="display: flex;">
+            <span class="questions">${question[q].question}</span>
+            <span class="answers">
+            ${createAnswers()}
+            </span>
+        </div>
+        `
+    }
+    return innerHTML;
+}
+
+function createAnswers() {
+    let innerHTML = '';
+    for (let a = 0; a < 5; a++) {
+        innerHTML += `
+        <span class="checkbox"></span>
+        `
+    }
+    return innerHTML;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// må endres på eller lages fra scratch
+// function createOptionsHtml() {
+//     let innerHtml = '<table style="border: 2px solid black;">';
+//     for (let i = 0; i < model.questions.length; i++) {
+//         const option = model.questions[i];
+//         let showX = option.answer ? 'x' : ' ';
+//         innerHtml += /*HTML*/`
+//                <tr>
+//                     <td>${option.question}</td>
+//                     <td>
+//                         <span onclick="selectedAnswer(${i});" class="answers">${showX}</span>
+//                         <span onclick="selectedAnswer(${i});" class="answers">${showX}</span>
+//                         <span onclick="selectedAnswer(${i});" class="answers">${showX}</span>
+//                         <span onclick="selectedAnswer(${i});" class="answers">${showX}</span>
+//                         <span onclick="selectedAnswer(${i});" class="answers">${showX}</span>
+//                     </td>
+//                </tr>
+//         `;
+//     };
+//     innerHtml += '</table>';
+//     return innerHtml;
+// }
 
 
 function credit() {
@@ -78,7 +147,7 @@ function credit() {
     return creditHtml;
 }
 
-// Get current date to load when pageonload.
+// Get current date to load in form when pageonload.
 function getCurrentDate() {
     var currentDate = new Date();
     var day = currentDate.getDate();
@@ -96,6 +165,7 @@ window.onload = function () {
     setCurrentDate();
 }
 
+// ikke ferdig
 function generatePDF() {
     const doc = new window.jspdf.jsPDF();
     const formContent = document.getElementById('createOptionsHtml').textContent.trim();
