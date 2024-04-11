@@ -56,9 +56,26 @@ h2 {
 .textCenter {
     text-align: center;
 }
-/*.sides {
-    display: grid;
+.answers {
     display: inline-block;
-    border: 2px black solid;
-    grid-template-columns: 3 (30px, 800px, 30px);
-}*/
+    width: 20px;
+    height: 20px;
+    border: 2px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.answers-table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid black;
+}
+.answers-table th,
+.answers-table td {
+    border: 1px solid black; 
+    padding: 8px; 
+    text-align: left; 
+}
+
+.answers-table th {
+    background-color: lightgray;
+}
