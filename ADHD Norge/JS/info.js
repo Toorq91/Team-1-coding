@@ -1,4 +1,16 @@
 const info = {
+    infoText: "Svar på spørsmålene nedenfor. Vurder deg selv i forhold til kriteriene ved hjelp av skalaen til høyre på arket. For hvert spørsmål <b><u>klikker du i den ruten</b></u> som best beskriver hvordan du har følt og oppført deg de siste seks månedene. Etter at du har fylt ut denne sjekklisten, gir du den til din behandler, slik at dere kan diskutere den i løpet av dagens time.",
+    result: [
+        {
+            header: 'Anbefaling av kontakt med fastlege',
+            text: `Med resultat av denne testen anbefaler vi at du tar en prat med fastlegen angående om du burde få utredning av ADHD`,
+        },
+        {
+            header: 'Ser ikke grunn til anbefaling av kontakt med fastlege',
+            text: `Ikke tydlige nok symptomer til å anbefale lege, men hvis du selv er usikker og føler 
+            deg plaget med saker kan du ta utskrift av dette dokumentet og ta med til fastlegen for videre oppfølging.`,
+        },
+    ],
     credit: [
         {
             name: `<div style="font-weight: bold;">Lenard Adler, MD</div>

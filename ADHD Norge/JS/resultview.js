@@ -8,12 +8,13 @@ function resultPage() {
                 <div class="resultDetailsFont">${getCurrentDate()}</div>
             </div>
         </div>
-        <div class="center">
+        <div class="center" style="padding-bottom: 20px;">
         <br/><br/><br/>
             ${resultPageAdhdAnswer()}<br/><br/>
             ${createForm()}<br/><br/><br/>
-            <div class="button2" onclick="model.app.page = 'print'; updateView(); printForm();">Skriv ut</div>
-            
+        <div class="textCenter">
+            <div class="buttonEnabled" onclick="model.app.page = 'print'; updateView(); printForm();">Skriv ut</div>
+        </div>
         </div>
     `;
 }
@@ -23,20 +24,18 @@ function createGray(aIndex, qIndex) {
     return 'style="background-color: lightgray; cursor: not-allowed;"'
 }
 
-
 function resultPageAdhdAnswer() {
     const hasADHD = model.app.hasADHD;
     let header = '';
     let text = '';
     let innerHTML = '';
     if (hasADHD == true) {
-        header = 'Anbefaling av kontakt med fastlege'
-        text = `Med resultat av denne testen anbefaler vi at du tar en prat med fastlegen angående om du burde få utredning av ADHD`;
+        header = info.result[0].header;
+        text = info.result[0].text;
     }
     else {
-        header = 'Ser ikke grunn til anbefaling av kontakt med fastlege'
-        text = `Ikke tydlige nok symptomer til å anbefale lege, men hvis du selv er usikker og føler 
-                deg plaget med saker kan du ta utskrift av dette dokumentet og ta med til fastlegen for videre oppfølging.`;
+        header = info.result[1].header;
+        text = info.result[1].text;
     }
     innerHTML = /*HTML*/`
     <div class="textCenter">
@@ -56,3 +55,8 @@ function printPage() {
     `;
 }
 
+// ikke ferdig
+function generatePDF() {
+    const doc = new window.jspdf.jsPDF();
+    const formContent = document.getElementById('createOptionsHtml').textContent.trim();
+}

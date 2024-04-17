@@ -6,7 +6,7 @@ function showX(aIndex, qIndex) {
 
 function checkResults() {
     const answer = model.questions          
-    const hasADHD = model.app.hasADHD       // Spørre Terje hvorfor const til en model plass plutselig ikke fungerer lengre
+    let hasADHD = model.app.hasADHD
     let value = 0;
     for (let i = 0; i < 3; i++) {
         answer[i].answer >= 2 ? value++ : '';
@@ -14,17 +14,9 @@ function checkResults() {
     for (let i = 3; i < 6; i++) {
         answer[i].answer >= 3 ? value++ : '';
     }
-    if (value >= 4) model.app.hasADHD = true;
-    if (value <= 3) model.app.hasADHD = false;
+    if (value >= 4) hasADHD = true;
+    if (value <= 3) hasADHD = false;
 }
-
-function wait(ms){
-    var start = new Date().getTime();
-    var end = start;
-    while(end < start + ms) {
-      end = new Date().getTime();
-   }
- }
 
 function printForm() {
     window.print()

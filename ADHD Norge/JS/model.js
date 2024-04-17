@@ -9,7 +9,6 @@ const model = {
     },
 
     html: null,
-    infoText: "Svar på spørsmålene nedenfor. Vurder deg selv i forhold til kriteriene ved hjelp av skalaen til høyre på arket. For hvert spørsmål <b><u>klikker du i den ruten</b></u> som best beskriver hvordan du har følt og oppført deg de siste seks månedene. Etter at du har fylt ut denne sjekklisten, gir du den til din behandler, slik at dere kan diskutere den i løpet av dagens time.",
     questions: [
         {
             question: '1.&ensp; Hvor ofte har du problemer med å avslutte en oppgave etter at de interessante delene er unnagjort?',
