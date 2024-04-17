@@ -1,0 +1,7 @@
+!!!!!!!!!!!!!!!!!!!!!!!!! få (se resultat knappen) til å bare kunne fungere når alle 18 spørsmålene er bestvarte!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+Gå gjennom alle spørsmålene vi har til kunde i teamet 
+For bedre oppsett av side (evt mobil side);
+!!!! fixe opp den goofy jævla skjema CSS'en !!!! Im pixel perfect baby ;)
+

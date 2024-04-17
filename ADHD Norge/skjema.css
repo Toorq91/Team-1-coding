@@ -1,4 +1,5 @@
 body {
+    -webkit-print-color-adjust: exact; 
     background-color: lightslategray;
     font-family: Georgia, 'Times New Roman', Times, serif;
     line-height: 1.5;
@@ -105,7 +106,7 @@ h2 {
     scale: 1.1;
 }
 .button {
-    background-color: #04AA6D; /* Green */
+    background-color: #045faa;
     user-select: none;
     border: none;
     color: white;
@@ -116,9 +117,19 @@ h2 {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
-
+}
+.buttonDisabled {
+    background-color: #045faa;
+    user-select: none;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    opacity: 30%;
 }
 .button2 {
     background-color: #04AA6D; /* Green */
@@ -155,11 +166,17 @@ h2 {
   }
 
 .toolbar {
-    background-color: lightgreen;
+    background-color: rgb(144, 177, 238);
+    border: 2px solid rgb(2, 2, 141);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 250px;
-    width: 1300px;
+    gap: 450px;
+    width: 1329px;
     padding: 10px;
+}
+.resultDetailsFont {
+    font-weight: bold;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 140%
 }

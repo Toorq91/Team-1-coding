@@ -3,11 +3,11 @@ function resultPage() {
     model.html = /*HTML*/`
         <div style="display: grid; align-items: center; justify-content: center;">
             <div class="toolbar">
-                <div class="button" onclick="model.app.page = null; updateView()">Tilbake</div>
-                <div>${fname} ${sname}</div>
-                <div>${getCurrentDate()}</div>
+                <div class="button" onclick="pageButtons()">Tilbake</div>
+                <div class="resultDetailsFont">${fname} ${sname}</div>
+                <div class="resultDetailsFont">${getCurrentDate()}</div>
             </div>
-        </div><br/>
+        </div>
         <div class="center">
         <br/><br/><br/>
             ${resultPageAdhdAnswer()}<br/><br/>
@@ -16,6 +16,11 @@ function resultPage() {
             
         </div>
     `;
+}
+
+function createGray(aIndex, qIndex) {
+    if (model.app.answered == true && aIndex >= model.questions[qIndex].gray)
+    return 'style="background-color: lightgray; cursor: not-allowed;"'
 }
 
 

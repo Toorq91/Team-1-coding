@@ -1,11 +1,4 @@
-// 1:  resultat siden ✔
-// 2:  tilbake knapp ✔
-// 3:  knapp som skriver ut ✔
-// 4:  knapp som generer PDF ✔ ?
 
-// 1: Få grå felter til å vises seg på resultat siden
-// 2: Få grå del A og B til å vise på printen
-// 3: Få grå felter til å vises på printen
 
 // Start verdi:
 // model.app.answered = false,
@@ -43,7 +36,7 @@ function mainPage() {
                 ${createForm()}
                 <br/><br/><br/>
                 <form id="myForm">
-                <div class ="button" onclick ="model.app.page = 'result'; updateView()">Se resultat</div>
+                <div ${isAllQuestionsAnswered()}>Se resultat</div>
                 </form><hr/>
                 <h2>Nytten av ADHD- screening hos voksne</h2>
                 <div>${texts.desc3}</div>
@@ -55,7 +48,20 @@ function mainPage() {
         </div>
     </div>
     `;
-};
+}; //class ="button" onclick ="pageButtons()"
+
+function isAllQuestionsAnswered() {
+    let value = 0;
+    for (let i = 0; i < model.questions.length; i++) {
+        if (model.questions[i].bruv == true) value++
+    }
+    if (value < 18)
+    return 'class="buttonDisabled"' 
+    else if (value >= 18)
+    return 'class="button" onclick="pageButtons()"'
+}
+
+//        <span ${createGray(a, qIndex)} class="checkbox" ${clickableCheckbox(a, qIndex)}>${showX}</span>
 
 
 function userInput() {
@@ -110,7 +116,7 @@ function createQuestions(startIndex, endIndex) {
     for (let q = startIndex; q <= endIndex; q++) {
         innerHTML += /*HTML*/`
         <div style="display: flex;">
-            <span class="questions">${model.questions[q].question}</span>
+            <span class="questions">${question[q].question}</span>
             <span class="answers">
             ${createAnswers(q)}
             </span>
@@ -126,10 +132,18 @@ function createAnswers(qIndex) {
     for (let a = 0; a < 5; a++) {
         let showX = answer == null ? '' : answer == a ? 'X' : '';
         innerHTML /*HTML*/+= `
-        <span class="checkbox" onclick="showX(${a}, ${qIndex})">${showX}</span>
+        <span ${createGray(a, qIndex)} class="checkbox" ${clickableCheckbox(a, qIndex)}>${showX}</span>
         `
     }
     return innerHTML;
+}
+
+function clickableCheckbox(aIndex, qIndex) {
+    const app = model.app.answered;
+    if (app == false) 
+    return 'onclick="showX('+ aIndex + ', ' + qIndex + ')"'
+    if (app == true)
+    return 'style="cursor: not-allowed"'
 }
 
 function credit() {
