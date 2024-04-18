@@ -1,7 +1,11 @@
-!!!!!!!!!!!!!!!!!!!!!!!!! få (se resultat knappen) til å bare kunne fungere når alle 18 spørsmålene er bestvarte!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
 Gå gjennom alle spørsmålene vi har til kunde i teamet 
 For bedre oppsett av side (evt mobil side);
 !!!! fixe opp den goofy jævla skjema CSS'en !!!! Im pixel perfect baby ;)
 
+spørre Ole (kunde):
+- ser ting greit med tanke på visuelt og funksjonalitet 
+- Error i stedet for buttonDisabled? (navn også eller bare utfylling?) eller både og
+- skal vi ha en egen PDF side, eller går utskriften vi har nå greit?
+- hvis ting ser bra ut og blir godkjent, skal vi prøve oss på scalering for ulike monitorer med CSS ?
+- Skriv ut knapp over eller under skjemaet?
+- Skal vi endre på denne teksten? (Etter at du har fylt ut denne sjekklisten, gir du den til din behandler, slik at dere kan diskutere den i løpet av dagens time.)

@@ -1,6 +1,6 @@
 let fname = '';
 let sname = '';
-let valuez = 0;
+
 const model = {
     app: {
         page: null,
@@ -9,6 +9,7 @@ const model = {
     },
 
     html: null,
+    
     questions: [
         {
             question: '1.&ensp; Hvor ofte har du problemer med å avslutte en oppgave etter at de interessante delene er unnagjort?',

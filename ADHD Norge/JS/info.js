@@ -8,22 +8,25 @@ const info = {
         {
             header: 'Ser ikke grunn til anbefaling av kontakt med fastlege',
             text: `Ikke tydlige nok symptomer til å anbefale lege, men hvis du selv er usikker og føler 
-            deg plaget med saker kan du ta utskrift av dette dokumentet og ta med til fastlegen for videre oppfølging.`,
+                   deg plaget med saker kan du ta utskrift av dette dokumentet og ta med til fastlegen for videre oppfølging.`,
         },
     ],
     credit: [
         {
-            name: `<div style="font-weight: bold;">Lenard Adler, MD</div>
+            name: /*HTML*/`
+            <div style="font-weight: bold;">Lenard Adler, MD</div>
             <div>Associate Professor of Psychiatry and Neurology</div>
             <div>New York University Medical School</div><br/>`
         },
         {
-            name: `<div style="font-weight: bold;">Ronald C. Kessler, PhD</div>
+            name: /*HTML*/`
+            <div style="font-weight: bold;">Ronald C. Kessler, PhD</div>
             <div>Professor, Department of Health Care Policy</div>
             <div>Harvard Medical School</div><br/>`
         },
         {
-            name: `<div style="font-weight: bold;">Thomas Spencer, MD</div>
+            name: /*HTML*/`
+            <div style="font-weight: bold;">Thomas Spencer, MD</div>
             <div>Associate Professor of Psychiatry</div>
             <div>Harvard Medical School</div>`
         },
@@ -41,7 +44,7 @@ const info = {
                 Disse seks spørsmålene utgjør grunnlaget for ASRS v1.1 Screener og er også del A avsymptomsjekklisten. 
                 Del B av symptomsjekklisten inneholder de tolv resterende spørsmålene.<br/><br/><br/>`
             ,
-            list1: 
+            symptoms: 
                 `1.&emsp;&emsp; Be pasienten fylle ut både del A og del B av symptomsjekklisten ved å krysse av i den ruten som best beskriver hvor hyppig hvert symptom forekommer.<br/><br/>
                 2.&emsp;&emsp; Legg sammen svarene i del A. Hvis det er fire eller flere kryss i de skraverte rutene i del A,<br/> 
                 &emsp;&emsp;&emsp;har pasienten symptomer som i stor grad er overensstemmende med ADHD hos voksne. Videreutredning anbefales.<br/><br/>

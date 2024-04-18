@@ -3,60 +3,67 @@ function resultPage() {
     model.html = /*HTML*/`
         <div style="display: grid; align-items: center; justify-content: center;">
             <div class="toolbar">
-                <div class="button" onclick="pageButtons()">Tilbake</div>
+                <div class="button" onclick="pageButtons(); window.scrollTo(0, 1350)">Tilbake</div>
                 <div class="resultDetailsFont">${fname} ${sname}</div>
                 <div class="resultDetailsFont">${getCurrentDate()}</div>
             </div>
         </div>
-        <div class="center" style="padding-bottom: 20px;">
+        <div class="center">
         <br/><br/><br/>
             ${resultPageAdhdAnswer()}<br/><br/>
             ${createForm()}<br/><br/><br/>
-        <div class="textCenter">
-            <div class="buttonEnabled" onclick="model.app.page = 'print'; updateView(); printForm();">Skriv ut</div>
-        </div>
+            <div class="textCenter">
+                <div class="buttonEnabled" onclick="model.app.page = 'print'; updateView(); printForm();">Skriv ut</div>
+            </div>
         </div>
     `;
-}
+};
 
 function createGray(aIndex, qIndex) {
-    if (model.app.answered == true && aIndex >= model.questions[qIndex].gray)
-    return 'style="background-color: lightgray; cursor: not-allowed;"'
-}
+    const answered = model.app.answered;
+    const question = model.questions;
+    if (answered == true && aIndex >= question[qIndex].gray)
+        return 'style="background-color: lightgray; cursor: not-allowed;"'
+};
 
 function resultPageAdhdAnswer() {
     const hasADHD = model.app.hasADHD;
+    const output = info.result;
     let header = '';
     let text = '';
-    let innerHTML = '';
     if (hasADHD == true) {
-        header = info.result[0].header;
-        text = info.result[0].text;
+        header = output[0].header;
+        text = output[0].text;
     }
     else {
-        header = info.result[1].header;
-        text = info.result[1].text;
+        header = output[1].header;
+        text = output[1].text;
     }
-    innerHTML = /*HTML*/`
-    <div class="textCenter">
-        <h1>${header}</h1>
-        <h3 style="width: 950px;">${text}</h3>
-    </div>
+    let innerHTML = /*HTML*/`
+        <div class="textCenter">
+            <h1>${header}</h1>
+            <h3 style="width: 950px;">${text}</h3>
+        </div>
     `;
     return innerHTML;
-}
+};
 
 function printPage() {
     model.html = /*HTML*/ `
-    <div style="background-color: white;">
-        <h3>${fname} ${sname}</h3>
-        <div style="scale: 0.65; position: relative; bottom: 100px;">${createForm()}</div>
-    </div>
+        <div style="background-color: white; text-align: center;">
+            <div style="position: relative; top: 50px;">
+                <b><u>ADHD selvrapporteringsskjema</b></u>
+                <div>${fname} ${sname}</div>
+            </div>
+            <div style="scale: 0.65; position: relative; bottom: 80px;">
+                ${createForm()}
+            </div>
+        </div>
     `;
-}
+}; //transform: scale(0.6, 0.9)
 
 // ikke ferdig
 function generatePDF() {
     const doc = new window.jspdf.jsPDF();
     const formContent = document.getElementById('createOptionsHtml').textContent.trim();
-}
+};

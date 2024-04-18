@@ -1,12 +1,11 @@
 function showX(aIndex, qIndex) {
     model.questions[qIndex].answer = aIndex;
-    model.questions[qIndex].bruv = true;
     updateView()
 }
 
 function checkResults() {
     const answer = model.questions          
-    let hasADHD = model.app.hasADHD
+    const app = model.app
     let value = 0;
     for (let i = 0; i < 3; i++) {
         answer[i].answer >= 2 ? value++ : '';
@@ -14,8 +13,8 @@ function checkResults() {
     for (let i = 3; i < 6; i++) {
         answer[i].answer >= 3 ? value++ : '';
     }
-    if (value >= 4) hasADHD = true;
-    if (value <= 3) hasADHD = false;
+    if (value >= 4) app.hasADHD = true;
+    if (value <= 3) app.hasADHD = false;
 }
 
 function printForm() {
@@ -27,7 +26,9 @@ function printForm() {
 function pageButtons() {
     checkResults();
     model.app.answered = !model.app.answered;
-    if (model.app.page == null) model.app.page = 'result'
-    else if (model.app.page == 'result') model.app.page = null
+    if (model.app.page == null) 
+        model.app.page = 'result'
+    else if (model.app.page == 'result') 
+        model.app.page = null
     updateView();
 }
