@@ -52,7 +52,7 @@ function printPage() {
     model.html = /*HTML*/ `
         <div style="background-color: white; text-align: center;">
             <div style="position: relative; top: 50px;">
-                <b><u>ADHD selvrapporteringsskjema</b></u>
+                <b><u>Symptomsjekkliste for ADHD- selvrapporteringsskala for voksne (ASRS-v1.1)</b></u>
                 <div>${fname} ${sname}</div>
             </div>
             <div style="scale: 0.65; position: relative; bottom: 80px;">
